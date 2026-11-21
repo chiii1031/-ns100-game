@@ -1,56 +1,489 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#091827"><title>NS100｜百歲人生模擬實驗室</title><style>
-:root{font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;color:#eaf5f5;background:#071521}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0,#17475a,transparent 45%),#071521;min-height:100vh}main{max-width:780px;margin:auto;padding:24px 16px 70px}.brand{color:#6ce7d3;font-size:13px;letter-spacing:.16em;font-weight:800}.hero{font-size:clamp(32px,7vw,58px);line-height:1.15;margin:20px 0}p{color:#bdd1d9;line-height:1.8}.card{background:#112637;border:1px solid #29475a;border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 12px 28px #0002}h2{font-size:25px;margin:6px 0 12px}h3{margin:4px 0 10px}.btn{display:block;width:100%;text-align:left;border:1px solid #356070;border-radius:15px;background:#18364a;color:#f2ffff;padding:17px 18px;margin:11px 0;font-size:16px;line-height:1.5;cursor:pointer}.btn:hover,.btn:focus{border-color:#75efdd;background:#235365}.primary{background:#64ddc8;color:#092a31;border:0;text-align:center;font-weight:800}.primary:hover{background:#8af5e3}.muted{color:#9cb6c3;font-size:13px}.pill{display:inline-block;border-radius:50px;background:#1c4552;color:#a7f4e5;padding:7px 12px;font-size:13px;margin:5px 5px 5px 0}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#0b1b2a;border-radius:15px;padding:14px}.stat b{display:block;font-size:23px;margin-top:6px}.meter{height:7px;background:#244352;border-radius:9px;overflow:hidden;margin-top:10px}.meter span{display:block;background:#6de2ce;height:100%}.bar{height:7px;background:#1d3949;border-radius:8px;margin:14px 0 22px}.bar span{display:block;background:#6de2ce;height:100%;border-radius:8px}.note{border-left:3px solid #5bdec8;padding:12px 14px;background:#173442;color:#cce4e5;border-radius:8px;line-height:1.7}.choice strong{display:block}.choice small{display:block;color:#bbd1d8;margin-top:5px}.timeline{border-left:2px solid #37717a;margin-left:8px;padding-left:18px}.timeline div{margin:18px 0}.footer{font-size:12px;color:#88a6b5;margin-top:30px}a{color:#8ff3e4}@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr)}}@media print{body{background:white;color:#111}main{max-width:none}.btn,.brand,.footer{display:none}.card{box-shadow:none;color:#111}p,.muted{color:#333}}
-.landing{position:relative;overflow:hidden;min-height:370px;border-radius:26px;background:linear-gradient(180deg,#102f48 0%,#1b5161 55%,#163843 100%);border:1px solid #37697b;margin:20px 0 24px}.sun{position:absolute;width:115px;height:115px;border-radius:50%;background:#ffe1a1;box-shadow:0 0 60px #f8cd8790;top:32px;right:55px}.hill{position:absolute;bottom:68px;width:125%;left:-10%;height:140px;background:#225a5b;border-radius:55% 55% 0 0;transform:rotate(-7deg)}.hill.two{bottom:40px;left:35%;background:#2c6b64;transform:rotate(12deg)}.road{position:absolute;bottom:-140px;left:50%;width:200px;height:410px;background:#c4d9c8;transform:translateX(-50%) perspective(250px) rotateX(34deg);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);border-radius:50% 50% 0 0}.road:after{content:'';position:absolute;left:49%;top:15%;height:75%;width:3px;background:repeating-linear-gradient(to bottom,#fff 0 22px,transparent 22px 45px);animation:roadMove 1.6s linear infinite}.walker{position:absolute;bottom:77px;left:50%;transform:translateX(-50%);width:42px;height:104px;animation:walkBounce .65s ease-in-out infinite alternate}.walker .head{position:absolute;top:0;left:11px;width:22px;height:22px;border-radius:50%;background:#f3c49a}.walker .torso{position:absolute;top:24px;left:8px;width:27px;height:42px;border-radius:11px 11px 7px 7px;background:#f2ac67}.walker .arm{position:absolute;top:29px;width:9px;height:38px;background:#f3c49a;border-radius:8px;transform-origin:top}.walker .arm.left{left:4px;animation:limb .8s infinite alternate}.walker .arm.right{right:1px;animation:limb .8s infinite alternate-reverse}.walker .leg{position:absolute;top:62px;width:10px;height:39px;background:#182d45;border-radius:7px;transform-origin:top}.walker .leg.left{left:10px;animation:limb .8s infinite alternate-reverse}.walker .leg.right{right:7px;animation:limb .8s infinite alternate}.sign{position:absolute;bottom:110px;right:10%;background:#f3edcc;color:#173e48;padding:9px 13px;border-radius:8px;font-weight:800;font-size:13px;transform:rotate(5deg)}.sign:after{content:'';position:absolute;top:100%;left:50%;height:44px;width:5px;background:#f3edcc}.landmark{position:absolute;top:25px;left:20px;color:#d7f8ec;font-size:13px;letter-spacing:.1em;font-weight:700}.age-chip{position:absolute;bottom:16px;left:17px;color:#e3fff4;font-weight:700;font-size:13px}@keyframes limb{from{transform:rotate(-22deg)}to{transform:rotate(25deg)}}@keyframes walkBounce{to{transform:translate(-50%,-4px)}}@keyframes roadMove{to{background-position:0 45px}}@media(prefers-reduced-motion:reduce){.walker,.walker .arm,.walker .leg,.road:after{animation:none}}
-.creator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.type-option{border:1px solid #315466;background:#102a3b;color:#eafafa;border-radius:13px;padding:12px;text-align:left;cursor:pointer}.type-option.active{border:2px solid #65e3ce;background:#245263}.type-option b{display:block;font-size:17px}.type-option svg{width:100%;height:auto;max-height:112px;display:block;margin:0 auto 8px}.type-preview svg{width:150px;height:150px;display:block;margin:auto}.type-option span{display:block;color:#b9d6db;font-size:12px;margin-top:5px}.creator-input{display:block;width:100%;border-radius:12px;padding:15px;background:#0b1c2a;color:white;border:1px solid #477181;font-size:17px}.avatar{font-size:48px;text-align:center;margin:8px 0}.bonus{color:#85f0cd;font-weight:800}.gender-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.gender-row button{font-size:14px;text-align:center;padding:13px 6px}.type-preview{border:1px solid #397c76;border-radius:16px;padding:17px;background:#163c43;margin:15px 0}@media(max-width:360px){.creator-grid{grid-template-columns:1fr}}</style></head><body><main><div class="brand">NS100 / LIFE SIMULATION LAB</div><div id="app"></div><div class="footer">本遊戲為提案展示原型。人物設定、風險發生機率、費用、保障與理賠減免均為教學模擬，非實際保險商品條款、報價或投資建議。</div></main><script>
-const $=x=>document.getElementById(x),money=n=>'NT$ '+Math.round(n).toLocaleString('zh-TW'),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-const archetypes=[["ISTJ","物流師","穩健務實，擅長建立秩序","money",12000,"起始資產 +12,000"],["ISFJ","守護者","細心可靠，重視照顧與承諾","health",8,"健康 +8"],["INFJ","提倡者","有遠見，關注意義與他人","joy",9,"幸福 +9"],["INTJ","建築師","善於長期規劃與策略","money",16000,"起始資產 +16,000"],["ISTP","鑑賞家","靈活冷靜，擅長解決問題","health",9,"健康 +9"],["ISFP","探險家","重視感受與生活體驗","joy",12,"幸福 +12"],["INFP","調停者","富有想像力與同理心","joy",11,"幸福 +11"],["INTP","邏輯學家","喜歡探索系統與可能性","income",5000,"成年後每回合收入 +5,000"],["ESTP","企業家","敢於嘗試，善於即時應變","money",10000,"起始資產 +10,000"],["ESFP","表演者","活力充沛，享受人際互動","joy",13,"幸福 +13"],["ENFP","競選者","熱情好奇，擅長發掘機會","joy",10,"幸福 +10"],["ENTP","辯論家","創意靈活，樂於挑戰既有想法","income",6000,"成年後每回合收入 +6,000"],["ESTJ","總經理","重視效率與組織能力","money",14000,"起始資產 +14,000"],["ESFJ","執政官","熱心合作，重視人際連結","health",7,"健康 +7"],["ENFJ","主人公","善於鼓舞與凝聚他人","joy",12,"幸福 +12"],["ENTJ","指揮官","擅長領導與目標管理","income",8000,"成年後每回合收入 +8,000"]];
-const avatarStyles=[
-['#263c5a','#e8b18d','short','#4c72a1','glasses'],['#6a433f','#f2c6a4','bun','#7bb8b2','flower'],['#4d3658','#eac0a4','long','#8a79b8','star'],['#202d40','#e4ad8c','swept','#657bb0','glasses'],
-['#44332c','#e6b590','short','#6a958f','headphones'],['#995c40','#f0c7a6','bob','#db9a83','flower'],['#5a3d51','#f2c4a8','long','#8da9a0','flower'],['#3b374e','#d7a17c','messy','#8e86a8','glasses'],
-['#3e2b2e','#e5ad86','swept','#bc8572','headphones'],['#96583b','#f4c7a4','ponytail','#e5a66c','star'],['#c27d4c','#f4c6a1','messy','#d9a278','headphones'],['#272d46','#e7b59a','swept','#9d83b2','star'],
-['#3c332e','#e4b18e','short','#688eac','glasses'],['#694337','#f1c6a9','bob','#c98e9c','flower'],['#835443','#edc0a0','ponytail','#b38ac4','star'],['#2c2d39','#e5b08d','swept','#9a8b75','headphones']];
-function avatar(code,size=84){let i=archetypes.findIndex(t=>t[0]===code);if(i<0)i=0;let [hair,skin,style,shirt,access]=avatarStyles[i],id='av'+i,face='<ellipse cx="50" cy="49" rx="23" ry="27" fill="'+skin+'"/><path d="M39 49q4-3 8 0 M54 49q4-3 8 0" stroke="#4c3540" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M45 62q5 5 11 0" fill="none" stroke="#a25b5c" stroke-width="2" stroke-linecap="round"/><ellipse cx="30" cy="53" rx="5" ry="8" fill="'+skin+'"/><ellipse cx="70" cy="53" rx="5" ry="8" fill="'+skin+'"/>';
-let hairBack=style==='long'||style==='ponytail'?'<path d="M23 35Q15 60 20 85L35 81 67 81 82 91Q84 49 73 27Z" fill="'+hair+'"/>':'';
-let top=style==='bun'?'<circle cx="29" cy="21" r="14" fill="'+hair+'"/><path d="M25 44Q20 11 53 19Q78 16 75 47Q66 32 57 29Q42 43 25 44Z" fill="'+hair+'"/>':style==='messy'?'<path d="M22 46L19 26 32 31 38 13 49 24 62 12 67 29 81 22 76 48Q66 32 57 33Q42 42 22 46Z" fill="'+hair+'"/>':style==='bob'?'<path d="M24 52Q17 18 49 16Q82 17 76 56L69 69 65 33Q46 46 27 43L32 68Z" fill="'+hair+'"/>':'<path d="M25 44Q20 15 48 17Q76 14 76 45Q67 35 59 29Q44 44 25 44Z" fill="'+hair+'"/>';
-let deco=access==='glasses'?'<g stroke="#354454" stroke-width="2" fill="none"><rect x="34" y="43" width="15" height="12" rx="5"/><rect x="52" y="43" width="15" height="12" rx="5"/><path d="M49 47h3"/></g>':access==='flower'?'<g transform="translate(72 31)"><circle r="4" fill="#ffe5a4"/><circle cx="-6" r="3.5" fill="#fff3f0"/><circle cx="6" r="3.5" fill="#fff3f0"/><circle cy="-6" r="3.5" fill="#fff3f0"/><circle cy="6" r="3.5" fill="#fff3f0"/></g>':access==='headphones'?'<path d="M25 51Q19 19 50 19Q81 19 75 51" fill="none" stroke="#e9d5bd" stroke-width="6"/><rect x="18" y="46" width="11" height="18" rx="5" fill="#4c5a72"/><rect x="71" y="46" width="11" height="18" rx="5" fill="#4c5a72"/>':'<path d="M70 23l2 5 6 1-5 4 1 6-5-3-5 3 1-6-4-4 6-1z" fill="#ffe4a0"/>';
-return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 100 100" role="img" aria-label="'+code+' 專屬角色肖像" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="'+id+'" x2="1" y2="1"><stop stop-color="#f8e7d9"/><stop offset="1" stop-color="'+shirt+'"/></linearGradient></defs><rect width="100" height="100" rx="17" fill="url(#'+id+')"/><circle cx="79" cy="18" r="12" fill="#fff" opacity=".3"/>'+hairBack+'<path d="M15 100Q17 75 41 76L50 84 59 76Q83 77 85 100" fill="'+shirt+'"/>'+face+top+deco+'</svg>'}
-const phases=[
-{age:0,title:'生命的起點：由父母替你決定',intro:'你剛出生，還無法替自己做選擇。這一回合由父母為你規劃家庭預算與保障。遊戲資產代表家庭可動用的模擬準備金。',choices:[['父母先為寶寶配置醫療保障','家庭準備金 -12,000，建立醫療保障（模擬）',{money:-12000,medical:true}],['父母優先準備緊急預備金','家庭準備金 +30,000，暫不新增保障',{money:30000}],['父母選擇醫療與意外雙保障','家庭準備金 -20,000，建立兩類保障（模擬）',{money:-20000,medical:true,accident:true}]]},
-{age:6,title:'童年：成長與照顧',intro:'小時候的醫療、教育與安全支出，仍由照顧者做決策。',choices:[['家長持續維持保障','家庭準備金 -8,000，補足醫療保障',{money:-8000,medical:true}],['家長投入健康與運動','健康 +10，家庭準備金 -12,000',{health:10,money:-12000}],['家長累積教育基金','家庭準備金 +20,000，幸福 -2',{money:20000,joy:-2}]]},
-{age:12,title:'少年時期：逐漸學會選擇',intro:'你開始有自己的想法，但家庭仍協助管理風險與財務。',choices:[['與家長一起檢視意外保障','家庭準備金 -8,000，建立意外保障',{money:-8000,accident:true}],['參加社團與探索興趣','幸福 +12，家庭準備金 -10,000',{joy:12,money:-10000}],['培養儲蓄習慣','家庭準備金 +16,000，幸福 -2',{money:16000,joy:-2}]]},
-{age:18,title:'人生的第一個選擇',intro:'你即將離開校園，準備探索自己的生活。',choices:[['先存緊急預備金','金錢 +30,000，幸福 -3',{money:30000,joy:-3}],['投入興趣與探索','幸福 +12，金錢 -15,000',{money:-15000,joy:12}],['兼職累積工作經驗','金錢 +18,000，健康 -4',{money:18000,health:-4}]]},
-{age:23,title:'第一份工作',intro:'有了收入，支出與風險也開始增加。',choices:[['建立醫療保障','支付模擬保費 12,000，啟用醫療保障',{money:-12000,medical:true}],['先投資自己','收入能力 +6,000，金錢 -18,000',{money:-18000,income:6000}],['享受自由生活','幸福 +12，金錢 -22,000',{money:-22000,joy:12}]]},
-{age:27,title:'通勤與生活節奏',intro:'工作、旅行和交通移動變得頻繁。',choices:[['配置意外保障','支付模擬保費 8,000，啟用意外保障',{money:-8000,accident:true}],['換更方便的交通工具','幸福 +8，金錢 -35,000',{money:-35000,joy:8}],['保持儲蓄紀律','金錢 +28,000，幸福 -2',{money:28000,joy:-2}]]},
-{age:35,title:'責任逐漸增加',intro:'你開始思考長期健康與家庭責任。',choices:[['補足重大疾病保障','支付模擬保費 24,000，啟用重疾保障',{money:-24000,critical:true}],['加強健康管理','健康 +16，金錢 -12,000',{money:-12000,health:16}],['努力衝刺職涯','收入能力 +12,000，健康 -10',{income:12000,health:-10}]]},
-{age:45,title:'人生中場',intro:'當家庭與職涯同時需要你，如何安排資源？',choices:[['定期檢視保障缺口','補齊尚未擁有的醫療保障',{money:-12000,medical:true}],['增加退休準備','金錢 +55,000，幸福 -4',{money:55000,joy:-4}],['安排休息與陪伴','健康 +8，幸福 +10，金錢 -24,000',{health:8,joy:10,money:-24000}]]},
-{age:55,title:'下一個人生階段',intro:'你開始為退休與未來照護做準備。',choices:[['建立長照準備','支付模擬費用 35,000，啟用長照保障',{money:-35000,care:true}],['累積退休資金','金錢 +65,000，幸福 -5',{money:65000,joy:-5}],['放慢腳步照顧健康','健康 +12，幸福 +6，金錢 -20,000',{health:12,joy:6,money:-20000}]]},
-{age:65,title:'退休生活',intro:'固定薪資逐漸退出生活，現金流與健康更重要。',choices:[['控制開銷並規劃退休','金錢 +45,000，幸福 -4',{money:45000,joy:-4}],['投入志工與社群','幸福 +14，健康 +4',{joy:14,health:4}],['實現旅行清單','幸福 +18，金錢 -60,000',{joy:18,money:-60000}]]},
-{age:78,title:'高齡生活的選擇',intro:'身體機能變化，支持系統也越來越重要。',choices:[['改善居家安全','健康 +8，金錢 -25,000',{health:8,money:-25000}],['與家人保持連結','幸福 +16',{joy:16}],['維持規律活動','健康 +12，幸福 +4',{health:12,joy:4}]]},
-{age:90,title:'回望人生',intro:'你希望為人生最後一段旅程留下什麼？',choices:[['安排照護與財務計畫','金錢 -12,000，幸福 +9',{money:-12000,joy:9}],['完成未竟的心願','金錢 -35,000，幸福 +16',{money:-35000,joy:16}],['分享人生經驗','幸福 +12',{joy:12}]]}
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#091827">
+<title>NS100｜百歲人生模擬實驗室</title>
+<style>
+:root{
+  font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;
+  color:#eaf5f5;
+  background:#071521;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(circle at 85% 0,#17475a,transparent 45%),#071521;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+main{
+  width:min(1160px,100%);
+  margin:auto;
+  padding:22px clamp(14px,3vw,32px) 60px;
+}
+.brand{
+  color:#76e9d4;
+  font-size:12px;
+  letter-spacing:.19em;
+  font-weight:850;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand:before{
+  content:'';
+  height:8px;
+  width:8px;
+  border-radius:50%;
+  background:#7ce9d6;
+  box-shadow:0 0 16px #7ce9d6;
+}
+.muted{color:#a8c5ce;font-size:13px}
+.lead{
+  font-size:clamp(28px,4.5vw,48px);
+  line-height:1.18;
+  letter-spacing:-.03em;
+  margin:18px 0 10px;
+}
+.sub{line-height:1.75;color:#bfd5da;margin:6px 0 14px}
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(330px,.9fr);
+  gap:20px;
+  align-items:start;
+}
+.panel{
+  background:linear-gradient(155deg,#112c3b,#0d2333);
+  border:1px solid #31576a;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 16px 45px #0003;
+}
+.panel h2{font-size:22px;margin:0 0 8px}
+.panel h3{font-size:16px;margin:16px 0 8px;color:#d6f5ef}
+.button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  padding:13px 16px;
+  background:#1a3d4d;
+  border:1px solid #467383;
+  color:#f3ffff;
+  border-radius:13px;
+  text-align:center;
+  font-weight:650;
+  margin:8px 0;
+  transition:background .2s,transform .2s;
+}
+.button:hover{background:#28596a;transform:translateY(-1px)}
+.button.primary{background:#6ce1ca;color:#082b33;border:0;font-weight:750}
+.button.primary:hover{background:#8cf2df}
+.button:disabled{opacity:.45;cursor:not-allowed}
+.button svg{width:19px;height:19px;flex-shrink:0}
+
+/* Stage & Walking Animation (Preserved V1 Visuals) */
+.stage{
+  position:relative;
+  overflow:hidden;
+  height:clamp(280px,32vw,390px);
+  border-radius:23px;
+  border:1px solid #457382;
+  background:linear-gradient(180deg,#12364e 0%,#215768 58%,#163d49 100%);
+  isolation:isolate;
+  transition:background 1.5s;
+}
+.stage.era-family{background:linear-gradient(180deg,#234760,#54817e 58%,#28564f 100%)}
+.stage.era-park{background:linear-gradient(180deg,#304a66,#648c80 58%,#2c6258 100%)}
+.sun{
+  position:absolute;width:110px;height:110px;top:32px;right:12%;
+  border-radius:50%;background:#ffe1a1;box-shadow:0 0 60px #f8cd8790;
+}
+.hill{
+  position:absolute;bottom:66px;width:125%;left:-10%;height:142px;
+  background:#225a5b;border-radius:55% 55% 0 0;transform:rotate(-7deg);
+  transition:background 1.4s;
+}
+.hill.two{bottom:40px;left:35%;background:#2c6b64;transform:rotate(12deg)}
+.era-family .hill{background:#416d68}
+.era-park .hill{background:#367767}
+.road{
+  position:absolute;bottom:-145px;left:50%;width:210px;height:415px;
+  background:#c4d9c8;
+  transform:translateX(-50%) perspective(250px) rotateX(34deg);
+  clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);
+  border-radius:50% 50% 0 0;
+}
+.road:after{
+  content:'';position:absolute;left:49%;top:15%;height:75%;width:3px;
+  background:repeating-linear-gradient(to bottom,#fff 0 22px,transparent 22px 45px);
+  animation:roadMove 1.6s linear infinite;
+}
+.walker{
+  position:absolute;bottom:77px;left:50%;width:82px;height:134px;
+  transform:translateX(-50%);
+  animation:walkBounce .65s ease-in-out infinite alternate;
+  filter:drop-shadow(0 8px 6px #082b3345);
+}
+.walker svg{width:100%;height:100%;overflow:visible}
+.walker .left-arm{transform-origin:28px 54px;animation:limb .8s infinite alternate}
+.walker .right-arm{transform-origin:54px 54px;animation:limb .8s infinite alternate-reverse}
+.walker .left-leg{transform-origin:34px 90px;animation:limb .8s infinite alternate-reverse}
+.walker .right-leg{transform-origin:48px 90px;animation:limb .8s infinite alternate}
+.landmark{position:absolute;top:18px;left:20px;font-size:12px;color:#d8fff0;letter-spacing:.12em;font-weight:800}
+.age-chip{position:absolute;bottom:16px;left:17px;font-size:13px;font-weight:750;color:#e6fff4}
+.stage-sign{
+  position:absolute;bottom:120px;right:10%;background:#f5eccc;color:#204750;
+  padding:8px 12px;border-radius:7px;font-size:12px;font-weight:800;transform:rotate(5deg);
+}
+.stage-sign:after{content:'';position:absolute;top:100%;left:48%;height:38px;width:5px;background:#f5eccc}
+.scenery{position:absolute;bottom:90px;left:5%;display:flex;gap:16px;align-items:end;opacity:.85;transition:opacity 1s}
+.building{width:27px;height:var(--h);background:#183e50;border-radius:4px 4px 0 0;border-top:4px solid #4d8190}
+.era-park .building{background:#2e695e;border-radius:50% 50% 4px 4px;border:0;width:37px}
+.era-park .building:after{content:'';display:block;width:6px;height:28px;background:#31544c;margin:40px auto 0}
+.era-family .building{background:#5c7770}
+
+/* HUD & Stats */
+.stage-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0;flex-wrap:wrap}
+.career-badge{
+  background:#163d4c;border:1px solid #487d8c;color:#9ef2df;
+  padding:4px 11px;border-radius:20px;font-size:12px;font-weight:700;
+}
+.progress{height:7px;border-radius:10px;background:#254455;overflow:hidden}
+.progress span{height:100%;display:block;background:linear-gradient(90deg,#6be0ca,#f2d49a);transition:width .8s}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:14px 0}
+.stat{padding:11px 10px;border:1px solid #2a4d5d;background:#0e2533;border-radius:14px;min-width:0}
+.stat-head{display:flex;align-items:center;gap:6px;color:#aecbd0;font-size:11px}
+.stat-head svg{width:15px;height:15px;color:#76e3d1}
+.stat strong{display:block;font-size:clamp(14px,1.6vw,18px);white-space:nowrap;margin:5px 0 7px;letter-spacing:-.02em}
+.stat .progress{height:5px}
+
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.tag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;border:1px solid #3e7775;background:#163c44;
+  border-radius:30px;padding:5px 11px;color:#a6f1df;
+}
+.tag.empty{border-color:#3d5662;color:#b3c9d0;background:#152b39}
+.step{font-size:11px;font-weight:800;color:#7fe8d5;letter-spacing:.12em;margin-bottom:8px}
+
+/* Options & Notes */
+.options{display:grid;gap:9px}
+.option{
+  width:100%;border:1px solid #3b6574;background:#163748;color:#ecf9f8;
+  padding:13px 15px;border-radius:13px;text-align:left;transition:background .2s,border-color .2s;
+}
+.option:hover{background:#245467;border-color:#6ce1ca}
+.option:disabled{opacity:.45;cursor:not-allowed}
+.option b{display:block;font-size:15px}
+.option small{display:block;font-size:12px;color:#b3ced3;margin-top:4px;line-height:1.55}
+.note{
+  border-left:3px solid #6be1ca;background:#183b46;
+  padding:13px 15px;border-radius:9px;line-height:1.7;color:#d5eeee;font-size:13.5px;
+}
+.note.warn{border-left-color:#f2b872;background:#2b3540}
+.input{
+  display:block;width:100%;background:#0c2635;border:1px solid #477384;
+  border-radius:12px;padding:12px 14px;color:white;
+}
+
+/* 16 MBTI Grid */
+.mbti-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px;
+  margin-top:8px;
+}
+.mbti-btn{
+  padding:9px 6px;
+  border:1px solid #385e6d;
+  background:#112f40;
+  color:#efffff;
+  border-radius:11px;
+  text-align:center;
+  transition:all .15s;
+}
+.mbti-btn:hover{background:#1b455a}
+.mbti-btn.selected{border:2px solid #7ce7d1;background:#215262;box-shadow:0 0 12px #7ce7d133}
+.mbti-btn b{display:block;font-size:14px;letter-spacing:.04em}
+.mbti-btn span{display:block;font-size:11px;color:#b8d2d7;margin-top:2px}
+.mbti-preview{
+  display:flex;align-items:center;gap:14px;
+  background:#133344;border:1px solid #3a6878;border-radius:14px;
+  padding:12px 14px;margin:12px 0;
+}
+.mbti-preview svg{width:64px;height:86px;flex-shrink:0}
+
+/* Knowledge Cards & Guide */
+.divider{height:1px;background:#315365;margin:16px 0}
+.change{color:#8bf1dc;font-size:13px;font-weight:700}
+.history{border-left:2px solid #447d80;margin:14px 0 14px 8px;padding-left:18px}
+.history article{margin:0 0 14px}
+.history b{font-size:14px}
+.history p{margin:3px 0;color:#bcd0d5;font-size:13px}
+.report{background:linear-gradient(145deg,#1a4650,#102a3c);border:1px solid #77b6ab}
+.report-hero{display:flex;align-items:center;gap:16px}
+.report-hero svg{width:88px;height:114px;flex-shrink:0}
+.report-hero h2{margin:0}
+.result-numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.result-numbers div{background:#0d2b38;border-radius:12px;padding:10px;text-align:center}
+.result-numbers strong{display:block;font-size:20px}
+.result-numbers small{color:#b8d0d4}
+
+/* Rich Knowledge Card Styling */
+.k-card{
+  background:#133242;border:1px solid #427585;border-radius:14px;
+  padding:14px 16px;margin:10px 0;
+}
+.k-card-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.k-badge{background:#235766;color:#9cf3e0;font-size:11px;font-weight:750;padding:3px 9px;border-radius:20px}
+.k-grid{display:grid;gap:6px;font-size:13px;color:#cde3e6;line-height:1.6}
+.k-row b{color:#8beedd}
+.knowledge-list{display:grid;gap:10px}
+.knowledge-list details{border:1px solid #3d6571;border-radius:12px;padding:12px 14px;background:#153645}
+.knowledge-list summary{cursor:pointer;font-weight:750;display:flex;align-items:center;gap:8px;color:#eafffc}
+.knowledge-list details[open] summary{margin-bottom:8px;color:#7fe8d5}
+.foot{font-size:11px;color:#9bb7c1;line-height:1.7;margin-top:24px}
+
+@keyframes limb{from{transform:rotate(-19deg)}to{transform:rotate(22deg)}}
+@keyframes walkBounce{to{transform:translate(-50%,-4px)}}
+@keyframes roadMove{to{background-position:0 45px}}
+@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(15deg)}75%{transform:rotate(-15deg)}}
+.rolling{animation:shake .16s linear infinite;display:inline-flex}
+
+@media(max-width:820px){
+  .layout{grid-template-columns:1fr}
+  .stage{height:310px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:460px){
+  .mbti-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.mbti-btn{padding:8px 2px}.mbti-btn span{font-size:9px}
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">NS100 / LIFE SIMULATION LAB <span style="margin-left:auto;color:#a6c5c9;letter-spacing:0;font-weight:500">FINAL DEMO · 18—100</span></div>
+  <div id="app"></div>
+  <div class="foot">NS100 提案競賽教學展示原型。所有職業薪資、生活開銷、風險機率與保障減免比例均為互動教學模擬數值，旨在協助年輕族群認識常見保險分類與人生風險規劃，非實際保險商品條款或理賠承諾。</div>
+</main>
+
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const clamp = (n, a=0, b=100) => Math.max(a, Math.min(b, n));
+const cash = n => 'NT$ ' + Math.round(n).toLocaleString('zh-TW');
+
+const ICON = {
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  wallet:'<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18M16 15h2"/>',
+  heart:'<path d="M20.8 8.5c0 4.7-8.8 10.5-8.8 10.5S3.2 13.2 3.2 8.5a4.7 4.7 0 0 1 8.8-2.1 4.7 4.7 0 0 1 8.8 2.1Z"/>',
+  spark:'<path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z"/>',
+  shield:'<path d="M12 2 4 5v6c0 5 3 8 8 11 5-3 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/>',
+  dice:'<rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1"/><circle cx="16" cy="16" r="1"/><circle cx="12" cy="12" r="1"/>',
+  arrow:'<path d="M4 12h16m-7-7 7 7-7 7"/>',
+  book:'<path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v14"/>',
+  refresh:'<path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.5 9a7 7 0 0 1 12-2L20 12M4 12l2.5 5a7 7 0 0 0 12-2"/>',
+  briefcase:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+  check:'<path d="m4 12 5 5L20 6"/>'
+};
+const icon = (name, size=18) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[name]||ICON.spark}</svg>`;
+
+/* 16 MBTI Profiles with distinct visual traits & balanced starting perks */
+const MBTI_DATA = {
+  INTJ:{title:'建築師',group:'NT',coat:'#3b6e8c',accent:'#f0c985',hair:'#1e293b',prop:'laptop',desc:'習慣提前布局的策略家，喜歡把未來算得清清楚楚。',perk:'初始存款 +15,000'},
+  INTP:{title:'邏輯學家',group:'NT',coat:'#497f96',accent:'#93e2d5',hair:'#283849',prop:'headphones',desc:'對世界充滿好奇的思考者，總在尋找最合理的解法。',perk:'初始存款 +12,000'},
+  ENTJ:{title:'指揮官',group:'NT',coat:'#2f5d7c',accent:'#f5b971',hair:'#1c2536',prop:'briefcase',desc:'果斷行動的領導者，面對人生轉折總是正面迎擊。',perk:'初始年薪加成 +5,000'},
+  ENTP:{title:'辯論家',group:'NT',coat:'#5289a1',accent:'#ffd180',hair:'#334155',prop:'coffee',desc:'點子滿滿的創新者，喜歡嘗試各種新鮮的人生體驗。',perk:'初始幸福 +8'},
+
+  INFJ:{title:'提倡者',group:'NF',coat:'#5b8c7a',accent:'#f3d59b',hair:'#2b3633',prop:'book',desc:'溫柔而堅定的理想家，重視內心平靜與長遠意義。',perk:'初始健康 +6、幸福 +4'},
+  INFP:{title:'調停者',group:'NF',coat:'#d69a70',accent:'#83d7c3',hair:'#3d2f2a',prop:'headphones',desc:'感性細膩的夢想家，在日常小確幸中累積生活能量。',perk:'初始幸福 +10'},
+  ENFJ:{title:'主人公',group:'NF',coat:'#4d8b7b',accent:'#f7c588',hair:'#26332f',prop:'coffee',desc:'溫暖有感染力的夥伴，總把家人與朋友放在心上。',perk:'初始幸福 +8'},
+  ENFP:{title:'競選者',group:'NF',coat:'#df8c68',accent:'#94e8d6',hair:'#3b2c27',prop:'camera',desc:'熱情洋溢的自由靈魂，把每一歲都活成一場冒險。',perk:'初始幸福 +10'},
+
+  ISTJ:{title:'物流師',group:'SJ',coat:'#557a8a',accent:'#e6cfa3',hair:'#1f2937',prop:'briefcase',desc:'務實可靠的執行者，一步一腳印累積穩健的安全網。',perk:'初始存款 +15,000'},
+  ISFJ:{title:'守衛者',group:'SJ',coat:'#739e8b',accent:'#f0d69c',hair:'#2d3735',prop:'bag',desc:'細心體貼的照顧者，總是默默為身邊的人遮風擋雨。',perk:'初始健康 +8'},
+  ESTJ:{title:'總經理',group:'SJ',coat:'#436b7d',accent:'#eab676',hair:'#1e293b',prop:'laptop',desc:'講求效率的管理者，讓工作、健康與財務井然有序。',perk:'初始年薪加成 +5,000'},
+  ESFJ:{title:'執政官',group:'SJ',coat:'#6a9685',accent:'#f5cb8c',hair:'#2f3a38',prop:'bag',desc:'熱心合群的生活家，在人際連結與家庭中找到歸屬。',perk:'初始健康 +5、幸福 +5'},
+
+  ISTP:{title:'鑑賞家',group:'SP',coat:'#6b7a99',accent:'#eac99a',hair:'#222834',prop:'headphones',desc:'冷靜靈活的實踐派，遇到突發狀況也能沉著拆解。',perk:'初始健康 +8'},
+  ISFP:{title:'探險家',group:'SP',coat:'#8c85b9',accent:'#f4d39c',hair:'#2e293a',prop:'camera',desc:'敏銳捕捉美好的藝術家，忠於當下的每一次感受。',perk:'初始幸福 +8'},
+  ESTP:{title:'企業家',group:'SP',coat:'#c97a63',accent:'#8ce3d0',hair:'#2c2220',prop:'coffee',desc:'精力充沛的行動派，享受挑戰也懂得及時行樂。',perk:'初始存款 +10,000'},
+  ESFP:{title:'表演者',group:'SP',coat:'#d48472',accent:'#f7d996',hair:'#332523',prop:'camera',desc:'樂觀開朗的氣氛製造機，讓平淡日子也充滿笑聲。',perk:'初始幸福 +10'}
+};
+
+/* Random Career Pool (22歲畢業後抽取，解決資產永遠只減不增的問題) */
+const CAREERS = [
+  {title:'數位行銷企劃',basePay:46000,growth:2200,desc:'薪資穩定成長，工作與生活步調平衡。'},
+  {title:'軟體工程師',basePay:62000,growth:3500,desc:'起薪與調薪幅度高，但偶爾需要留意過勞健康。'},
+  {title:'護理師／醫事人員',basePay:52000,growth:2400,desc:'收入穩定且具專業價值，輪班較考驗體力。'},
+  {title:'設計／接案創作者',basePay:44000,growth:2600,desc:'自由度高、幸福感佳，收入隨經驗逐步累積。'},
+  {title:'金融／企業營運專員',basePay:55000,growth:2900,desc:'財務規劃敏銳，職涯中後期收入穩健攀升。'},
+  {title:'公務／教育行政人員',basePay:48000,growth:2000,desc:'作息規律、健康維持容易，退休前收入平穩。'}
 ];
-const risks=[
-{type:'medical',name:'突發住院',desc:'你因急性疾病住院，需要醫療支出。',cost:52000,covered:14000,health:-8,tip:'醫療保障可協助分攤符合約定條件的醫療支出；實際給付依契約內容而定。'},
-{type:'accident',name:'交通意外',desc:'一次意外造成復健及生活費支出。',cost:70000,covered:18000,health:-12,tip:'意外險與醫療險保障範圍不同，是否給付仍須看事故原因與條款。'},
-{type:'critical',name:'重大疾病挑戰',desc:'你面臨需要長期治療與休養的健康事件。',cost:155000,covered:40000,health:-17,tip:'重大疾病保障可能提供符合契約定義的給付，並非所有疾病都自動符合。'},
-{type:'care',name:'長期照護需求',desc:'高齡生活出現需要協助照顧的情況。',cost:120000,covered:35000,health:-10,tip:'長照保障須符合約定的認定標準；提早準備可降低突發支出的壓力。'}
+
+/* Plain-Language Insurance Classification & Knowledge Cards (No product codes!) */
+const INSURANCE_TYPES = {
+  accident: {
+    name: '意外險（意外傷害與意外醫療）',
+    tag: '意外保障',
+    tagline: '專保「外來、突發、非疾病」造成的事故',
+    whatItDoes: '發生符合契約定義的意外事故時，依投保項目可能給付傷害醫療、失能或身故保險金；非所有事故與費用都涵蓋。',
+    suitableFor: '每天騎車/開車通勤族、外勤人員、喜歡戶外運動或旅遊的年輕人。',
+    diffNote: '與「醫療險」不同：生病住院要靠醫療險；但若是意外骨折去急診打自費鋼板，意外醫療險就能派上用場！'
+  },
+  medical: {
+    name: '實支實付醫療險',
+    tag: '實支實付醫療',
+    tagline: '解決健保不給付的自費手術與高價醫材',
+    whatItDoes: '符合契約給付項目與限額時，依實際合格醫療費用核算，專門填補微創手術費、自費人工關節、標靶藥物與病房差額。',
+    suitableFor: '所有人（尤其是剛出社會、預算有限，最怕一次住院就花光存款的小資族）。',
+    diffNote: '與「住院日額險」不同：日額險是按「住院天數」給固定津貼；實支實付則是直接幫你付掉昂貴的自費收據！'
+  },
+  daily: {
+    name: '住院日額與手術醫療險',
+    tag: '住院與手術',
+    tagline: '補貼住院期間的請假薪資損失與看護費',
+    whatItDoes: '符合契約約定的住院或手術條件時，依住院日數或手術項目給付約定金額，拿到的理賠金不限用途，可直接貼補請假少賺的薪水。',
+    suitableFor: '接案工作者、無薪病假族群，或希望住院時能安心休養、補貼家人請假照顧成本的人。',
+    diffNote: '常與實支實付搭配成「雙重醫療防護」，一個付醫院帳單、一個補貼生活收入中斷。'
+  },
+  critical: {
+    name: '重大疾病／癌症一次金險',
+    tag: '重大疾病一次金',
+    tagline: '符合約定疾病條件時，提供一次金支援',
+    whatItDoes: '符合契約約定的重大疾病或癌症定義與給付條件時，可能一次給付約定保險金，自由運用於新式療法或休養生活費。',
+    suitableFor: '25～45 歲責任漸增的上班族，或有家族病史、擔心一旦生大病會拖垮家庭經濟的人。',
+    diffNote: '不用等住院收據慢慢請款，符合契約條件時可有一筆緊急支援金，讓你有底氣暫停工作專心治療。'
+  },
+  life: {
+    name: '定期壽險（家庭責任保障）',
+    tag: '家庭責任壽險',
+    tagline: '把愛與責任留下，替家人撐住房貸與生活費',
+    whatItDoes: '在人生責任最重的階段（如背負房貸、扶養父母或小孩），若在保障期間內身故，約定身故保險金可協助家人維持生活；其他給付須依契約。',
+    suitableFor: '家中的主要經濟支柱、有學貸/房貸者，或需要奉養父母、照顧伴侶與孩子的人。',
+    diffNote: '保費相對親民，可以用低預算買到高額度，守護「你最在乎的人」不因意外而陷入生活困境。'
+  },
+  care: {
+    name: '長期照顧險（長照保障）',
+    tag: '長照保障',
+    tagline: '應對高齡失能或失智，分攤每月數萬元照護開銷',
+    whatItDoes: '當因疾病或老化導致生活無法自理（符合長照狀態）時，提供一次性關懷金與「每月/每年定期照護金」，支應看護、安養機構與輔具費用。',
+    suitableFor: '邁向百歲人生的每個人，以及不想在未來成為伴侶或下一代經濟重擔的族群。',
+    diffNote: '長照保障通常以契約約定的失能或長期照顧狀態為門檻，不能只因年齡增加就直接請領。'
+  },
+  travel: {
+    name: '旅遊平安險（旅平險＋不便險）',
+    tag: '旅遊平安保障',
+    tagline: '出國度假、海外突發疾病與班機延誤的守護神',
+    whatItDoes: '旅行期間的意外傷害、海外突發疾病醫療、班機延誤或行李遺失等保障，可能分屬不同險種與附加條款，須按實際投保內容認定。',
+    suitableFor: '愛出國旅遊、自由行、出差或喜歡體驗滑雪/潛水等海外活動的人。',
+    diffNote: '通常按旅程期間安排保障；海外醫療與不便險的給付項目、限額及除外事項必須分別確認。'
+  }
+};
+
+function avatar(mbtiCode) {
+  const m = MBTI_DATA[mbtiCode] || MBTI_DATA.INFJ;
+  let propSvg = '';
+  if (m.prop === 'laptop') {
+    propSvg = `<rect x="49" y="69" width="23" height="16" rx="3" fill="#c7d9dd" stroke="#476c78" stroke-width="2"/><path d="M49 82h23" stroke="#476c78" stroke-width="2"/>`;
+  } else if (m.prop === 'headphones') {
+    propSvg = `<path d="M22 21Q19 7 26 7M60 21Q63 7 56 7" stroke="${m.accent}" stroke-width="4.5" fill="none"/><rect x="19" y="18" width="5" height="9" rx="2" fill="${m.accent}"/><rect x="58" y="18" width="5" height="9" rx="2" fill="${m.accent}"/>`;
+  } else if (m.prop === 'briefcase') {
+    propSvg = `<rect x="50" y="74" width="22" height="16" rx="3" fill="#6d4c3d" stroke="#d8b998" stroke-width="1.8"/><path d="M57 74v-4h8v4" fill="none" stroke="#d8b998" stroke-width="2"/>`;
+  } else if (m.prop === 'coffee') {
+    propSvg = `<rect x="57" y="75" width="11" height="15" rx="2" fill="#f5efe6" stroke="#8c6d53" stroke-width="1.5"/><rect x="56" y="73" width="13" height="3" rx="1" fill="#8c6d53"/>`;
+  } else if (m.prop === 'book') {
+    propSvg = `<rect x="51" y="71" width="18" height="20" rx="2" fill="#e9d8a6" stroke="#5c746b" stroke-width="2"/><path d="M55 71v20" stroke="#5c746b" stroke-width="1.5"/>`;
+  } else if (m.prop === 'camera') {
+    propSvg = `<rect x="49" y="73" width="22" height="16" rx="4" fill="#263c52" stroke="#b9c8d0" stroke-width="2"/><circle cx="60" cy="81" r="4.5" fill="none" stroke="#dce6e5" stroke-width="2"/><path d="M50 73 41 56" stroke="${m.accent}" stroke-width="2.5"/>`;
+  } else {
+    propSvg = `<path d="M23 50Q11 55 14 78L20 91H29V55" fill="#466d70" stroke="${m.accent}" stroke-width="2"/>`;
+  }
+
+  return `<svg viewBox="0 0 82 134" role="img" aria-label="${mbtiCode} ${m.title}人物背影">
+    <ellipse cx="41" cy="128" rx="23" ry="5" fill="#082d3b" opacity=".25"/>
+    <g class="left-leg"><path d="M32 87 29 123" stroke="#24364b" stroke-width="12" stroke-linecap="round"/></g>
+    <g class="right-leg"><path d="M49 87 53 123" stroke="#24364b" stroke-width="12" stroke-linecap="round"/></g>
+    <g class="left-arm"><path d="M27 53 18 85" stroke="#efbc92" stroke-width="10" stroke-linecap="round"/></g>
+    <g class="right-arm"><path d="M55 53 64 85" stroke="#efbc92" stroke-width="10" stroke-linecap="round"/></g>
+    <path d="M27 46Q41 38 55 46L58 92Q41 98 24 92Z" fill="${m.coat}"/>
+    <path d="M32 43 41 53 50 43" fill="none" stroke="${m.accent}" stroke-width="3"/>
+    <path d="M33 25h16v22H33Z" fill="#e9b48d"/>
+    <ellipse cx="41" cy="22" rx="17" ry="19" fill="#edbd97"/>
+    <path d="M24 24Q21 1 40 3Q61 2 58 25L54 14Q42 20 27 14Z" fill="${m.hair}"/>
+    ${propSvg}
+  </svg>`;
+}
+
+
+/* Age-aware life events. 80/20 weighting applies to ordinary event draws. */
+const DAILY_EVENTS = [
+ {min:18,max:32,title:'第一份年終，怎麼犒賞自己？',story:'終於拿到年終獎金，想去旅行，也想留一點安全感。',choices:[{text:'安排日本獨旅',cost:30000,joy:20,health:2,tip:'旅行很值得，但要把旅費與緊急預備金分開。',knowledge:'travel'},{text:'存下年終，和家人聚餐',cost:3500,joy:12,health:1,tip:'讓財務與陪伴取得平衡。'}]},
+ {min:18,max:44,title:'連續加班兩週的週末',story:'終於休假，你想怎麼恢復精神？',choices:[{text:'追劇到天亮',cost:2400,joy:10,health:-8,tip:'短暫快樂不一定能補回睡眠。'},{text:'到郊外健走，早點睡',cost:1500,joy:9,health:9,tip:'規律活動有助維持健康。'}]},
+ {min:23,max:52,title:'家裡多了一隻米克斯',story:'你在認養會遇見一隻親人的貓咪，決定替牠準備新家。',choices:[{text:'安排檢查與完整用品',cost:12000,joy:23,health:2,tip:'養寵物也要規劃長期支出。'},{text:'先準備基本用品',cost:5500,joy:15,health:1,tip:'量力而為，照顧才能長久。'}]},
+ {min:24,max:56,title:'職涯進修的機會',story:'一門課程能提升專業能力，但需要時間與學費。',choices:[{text:'報名專業進修',cost:18000,joy:9,salaryBonus:15000,tip:'從下一個工作年度開始，模擬每年淨儲蓄提高。'},{text:'使用免費資源自學',cost:800,joy:6,salaryBonus:3500,tip:'持續學習也能帶來長期成長。'}]},
+ {min:30,max:65,title:'家庭露營提案',story:'家人想一起遠離螢幕，留下週末回憶。',choices:[{text:'租裝備去露營',cost:16000,joy:20,health:4,tip:'生活體驗與儲蓄不必二選一。'},{text:'在家煮一桌好菜',cost:3200,joy:12,health:2,tip:'陪伴不一定要花大錢。'}]},
+ {min:42,max:80,title:'陪父母參加社區健走',story:'你陪家人走一段河濱步道，也聊起退休生活。',choices:[{text:'固定每週一起運動',cost:1200,joy:16,health:10,tip:'陪伴與健康管理可以一起累積。'},{text:'替家人安排健康檢查',cost:6500,joy:11,health:5,tip:'健康檢查與保障規劃各有功能。'}]},
+ {min:55,max:100,title:'樂齡社團的新朋友',story:'社區開了攝影與園藝社團，你想怎麼安排時間？',choices:[{text:'報名攝影與戶外活動',cost:6500,joy:20,health:5,tip:'退休生活也需要社交與學習。'},{text:'參加免費社區活動',cost:500,joy:14,health:4,tip:'建立支持網絡不必高消費。'}]},
+ {min:18,max:100,title:'平凡日子的選擇',story:'最近生活有點忙，你決定把一個晚上留給自己。',choices:[{text:'安排舒適的小旅行',cost:7000,joy:15,health:2,tip:'合理預算內的休息也很重要。'},{text:'做一頓晚餐並早睡',cost:1000,joy:8,health:6,tip:'日常選擇也會慢慢累積成健康。'}]}
 ];
-const questions=[['面對新環境，你通常會？',['主動認識新朋友','先觀察再慢慢熟悉']],['做決策時你較重視？',['具體資料與經驗','未來可能性與想像']],['遇到兩難時你較傾向？',['分析利弊與邏輯','考慮感受與關係']],['規劃週末時你喜歡？',['先安排清楚行程','保留彈性與驚喜']]];
-let s={screen:'home'};const save=()=>localStorage.setItem('ns100_save',JSON.stringify(s));
-const btn=(label,fn,cls='')=>'<button class="btn '+cls+'" onclick="'+fn+'">'+label+'</button>';
-const stat=()=>'<div class="stats"><div class="stat">💰 資產<b>'+money(s.money)+'</b></div><div class="stat">❤️ 健康<b>'+s.health+'/100</b><div class="meter"><span style="width:'+s.health+'%"></span></div></div><div class="stat">✨ 幸福<b>'+s.joy+'/100</b><div class="meter"><span style="width:'+s.joy+'%"></span></div></div><div class="stat">🛡️ 保障<b>'+['medical','accident','critical','care'].filter(x=>s[x]).length+'/4</b></div></div>';
-const cover=()=>[['medical','醫療'],['accident','意外'],['critical','重疾'],['care','長照']].map(([k,v])=>'<span class="pill">'+(s[k]?'✓ ':'○ ')+v+'</span>').join('');
-function start(){s={version:3,screen:'creator',q:0,answers:[],playerName:'',gender:'未指定',personality:'ENFJ',step:0,money:80000,health:90,joy:65,income:0,medical:false,accident:false,critical:false,care:false,history:[],events:[]};save();render()}
-function selectType(code){s.personality=code;save();render()}function selectGender(g){s.gender=g;save();render()}function confirmCharacter(){let name=document.getElementById('player-name').value.trim();if(!name){alert('請先替角色取一個名字');return}if(name.length>16){alert('名稱請勿超過 16 個字');return}s.playerName=name;let t=archetypes.find(x=>x[0]===s.personality);s[t[3]]+=t[4];s.health=clamp(s.health,1,100);s.joy=clamp(s.joy,0,100);s.screen='game';save();render()}function safe(t){return String(t||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function answer(i){s.answers.push(i);s.q++;if(s.q>=4){s.personality=s.answers.map((v,i)=>[ ['E','I'],['S','N'],['T','F'],['J','P'] ][i][v]).join('');s.screen='game'}save();render()}
-function pick(i){let p=phases[s.step],c=p.choices[i],d=c[2];for(let k of ['money','health','joy','income'])s[k]=(s[k]||0)+(d[k]||0);for(let k of ['medical','accident','critical','care'])if(d[k])s[k]=true;s.health=clamp(s.health,1,100);s.joy=clamp(s.joy,0,100);if(p.age>=18)s.money+=s.income;s.history.push({age:p.age,choice:c[0]});s.step++;let eligible=risks.filter(r=>r.type!=='care'||p.age>=55);let trigger=[2,4,6,7].includes(s.step)||Math.random()<.17;if(trigger){let r=eligible[Math.floor(Math.random()*eligible.length)];let benefit=s[r.type]?r.covered:0;s.money-=r.cost-benefit;s.health=clamp(s.health+r.health,1,100);s.events.push({age:p.age,name:r.name,cost:r.cost,benefit});s.risk={...r,benefit};s.screen='risk'}else if(s.step>=phases.length)s.screen='end';save();render()}
-function next(){s.screen=s.step>=phases.length?'end':'game';delete s.risk;save();render()}
-function reset(){if(confirm('確定重新開始？目前紀錄將被覆蓋。'))start()}
-function report(){let txt='NS100 百歲人生模擬報告\n角色：'+s.playerName+'（'+s.gender+'）\\n人格偏好：'+s.personality+'（遊戲角色設定）\n模擬資產：'+money(s.money)+'\n健康：'+s.health+'/100\n幸福：'+s.joy+'/100\n保障：'+[['medical','醫療'],['accident','意外'],['critical','重疾'],['care','長照']].filter(x=>s[x[0]]).map(x=>x[1]).join('、')+'\n\n人生選擇：\n'+s.history.map(x=>x.age+'歲：'+x.choice).join('\n')+'\n\n風險事件：\n'+s.events.map(x=>x.age+'歲 '+x.name+'；模擬支出 '+money(x.cost)+'；模擬保障減免 '+money(x.benefit)).join('\n')+'\n\n本報告僅供教育展示，非實際保險商品資訊。';let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain;charset=utf-8'}));a.download='NS100_人生報告.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-function render(){let h='';if(s.screen==='home'){h='<div class="landing" role="img" aria-label="夕陽下，一個人沿著通往遠方的道路行走，象徵從零歲到百歲的人生旅程"><div class="sun"></div><div class="hill"></div><div class="hill two"></div><div class="road"></div><div class="walker"><div class="head"></div><div class="torso"></div><div class="arm left"></div><div class="arm right"></div><div class="leg left"></div><div class="leg right"></div></div><div class="sign">走向 100 歲</div><div class="landmark">LIFE IS A JOURNEY</div><div class="age-chip">0 歲 ━━━━━━━━━ 100 歲</div></div><h1 class="hero">如果人生可以<br><span style="color:#6ce7d3">先玩一次？</span></h1><p>從出生的那一刻開始，先由父母替你做選擇；長大後，再由你決定人生方向。一路走到 100 歲，體驗保障、財務與健康的交會。</p><div class="card"><h2>你的百歲人生，由你決定</h2><p>命名角色與選擇 MBTI → 0 歲父母決策 → 成長與人生抉擇 → 百歲報告</p>'+btn('開始我的百歲人生 →','start()','primary')+(localStorage.getItem('ns100_save')?btn('繼續上次的旅程','resume()'):'')+'</div><p class="muted">約 5–8 分鐘｜手機與電腦皆可玩｜無須登入</p>'}
-if(s.screen==='creator'){let t=archetypes.find(x=>x[0]===s.personality);h='<div class="pill">角色創建 · STEP 1 / 1</div><h1 class="hero">打造你的<br><span style="color:#6ce7d3">人生主角</span></h1><div class="card"><h2>角色名稱</h2><p>替自己取一個名字，之後會出現在人生旅程和結算報告。</p><input class="creator-input" id="player-name" maxlength="16" placeholder="例如：小恩、人生冒險家" value="'+safe(s.playerName)+'" oninput="s.playerName=this.value;save()"><h2 style="margin-top:24px">選擇性別</h2><div class="gender-row">'+['女性','男性','不指定'].map(g=>'<button class="btn '+(s.gender===g?'primary':'')+'" onclick="selectGender(\''+g+'\')">'+g+'</button>').join('')+'</div><h2 style="margin-top:24px">選擇 MBTI 人格職業</h2><p>16 種人格各有一個遊戲稱號與起始加成。點選即可預覽。</p><div class="creator-grid">'+archetypes.map(t=>'<button class="type-option '+(s.personality===t[0]?'active':'')+'" onclick="selectType(\''+t[0]+'\')">'+avatar(t[0],100)+'<b>'+t[0]+'</b><span>'+t[1]+'</span></button>').join('')+'</div><div class="type-preview"><div class="avatar">' +avatar(t[0],150)+'</div><h2>'+t[0]+'｜'+t[1]+'</h2><p>'+t[2]+'</p><div class="bonus">✦ 天賦加成：'+t[5]+'</div><p class="muted">這是為遊戲平衡設計的虛構屬性，不代表人格類型能預測財富、健康或人生表現。</p></div>'+btn('確認角色，從 0 歲開始 →','confirmCharacter()','primary')+'</div>'}if(s.screen==='quiz'){let q=questions[s.q];h='<div class="pill">人格探索 '+(s.q+1)+' / 4</div><div class="bar"><span style="width:'+s.q/4*100+'%"></span></div><div class="card"><h2>'+q[0]+'</h2><p>選擇最接近自己的答案，沒有對錯。</p>'+q[1].map((x,i)=>btn(x,'answer('+i+')')).join('')+'</div><p class="muted">這是啟發式偏好探索，不是經過心理計量驗證的 MBTI 測驗。</p>'}
-if(s.screen==='game'){let p=phases[s.step];h='<div class="pill">'+(p.age<18?'家庭代為決策 · ':'自己的人生 · ')+'第 '+(s.step+1)+' / '+phases.length+' 站</div><div class="pill">人格偏好 '+s.personality+'</div><div class="bar"><span style="width:'+s.step/phases.length*100+'%"></span></div><h1 class="hero">'+p.age+' 歲</h1>'+stat()+'<div class="card"><h2>'+p.title+'</h2><p>'+p.intro+'</p><h3>你會怎麼選？</h3>'+p.choices.map((c,i)=>'<button class="btn choice" onclick="pick('+i+')"><strong>'+c[0]+'</strong><small>'+c[1]+'</small></button>').join('')+'</div><div class="card"><h3>目前保障配置</h3>'+cover()+'</div>'}
-if(s.screen==='risk'){let r=s.risk;h='<div class="pill">'+safe(s.playerName)+' · 人生風險事件</div><h1 class="hero">意外不會<br>先打招呼。</h1>'+stat()+'<div class="card"><h2>'+r.name+'</h2><p>'+r.desc+'</p><div class="stat">模擬事件支出 <b>'+money(r.cost)+'</b></div><div class="stat" style="margin-top:10px">模擬保障減免 <b>'+money(r.benefit)+'</b></div><p>這次你實際承擔的模擬支出：<strong>'+money(r.cost-r.benefit)+'</strong></p><div class="note">保障知識卡：'+r.tip+'</div>'+btn('繼續人生旅程 →','next()','primary')+'</div>'}
-if(s.screen==='end'){let missing=[['medical','醫療'],['accident','意外'],['critical','重大疾病'],['care','長照']].filter(x=>!s[x[0]]).map(x=>x[1]);h='<div class="pill">'+safe(s.playerName)+' 的百歲人生完成</div><h1 class="hero">你的人生，<br><span style="color:#6ce7d3">不只有一種答案。</span></h1>'+stat()+'<div class="card"><h2>你的百歲人生報告</h2><p>角色：<strong>'+safe(s.playerName)+'（'+safe(s.gender)+'）</strong></p><p>人格偏好：<strong>'+s.personality+'</strong>（僅為遊戲探索）</p><h3>你做過的選擇</h3><div class="timeline">'+s.history.map(x=>'<div><b>'+x.age+' 歲</b>｜'+x.choice+'</div>').join('')+'</div><h3>經歷的風險</h3><div class="timeline">'+(s.events.length?s.events.map(x=>'<div><b>'+x.age+' 歲｜'+x.name+'</b><p>模擬支出 '+money(x.cost)+'；保障減免 '+money(x.benefit)+'</p></div>').join(''):'<p>本次沒有觸發風險事件。</p>')+'</div><h3>保障檢視</h3>'+cover()+'<p>'+(missing.length?'尚未配置的模擬保障：'+missing.join('、'):'四類模擬保障均已配置。')+'</p><div class="note">人生並非只追求最高資產。健康、幸福、家庭支持與保障配置，都可能影響面對風險時的選擇。</div>'+btn('儲存人生報告（文字檔）','report()','primary')+btn('列印／儲存 PDF','window.print()')+btn('重新開始另一段人生','reset()')+'</div>'}
-$('app').innerHTML=h}
-function resume(){try{let old=JSON.parse(localStorage.getItem('ns100_save'));if(old&&old.version===3&&old.screen&&old.money!==undefined){s=old;render()}else start()}catch(e){start()}}render();
+const RISK_EVENTS = [
+ {min:18,max:78,title:'通勤擦撞，需要骨折治療',story:'通勤途中意外受傷，急診與自費醫材形成一筆支出。',cost:180000,health:-13,joy:-10,cover:['accident','medical'],knowledge:'accident'},
+ {min:18,max:82,title:'海外旅途中突然就醫',story:'旅行途中出現急性症狀，海外急診帳單讓你措手不及。',cost:120000,health:-8,joy:-10,cover:['travel'],knowledge:'travel'},
+ {min:28,max:90,title:'健檢異常，安排微創手術',story:'追蹤檢查後需要接受符合情境的手術與短期休養。',cost:150000,health:-11,joy:-8,cover:['medical','daily'],knowledge:'medical'},
+ {min:35,max:85,title:'重大疾病需要停工休養',story:'醫療團隊建議長期治療，除了醫療費，也需要生活預備金。',cost:360000,health:-23,joy:-16,cover:['critical','medical'],knowledge:'critical'},
+ {min:55,max:100,title:'家人出現長期照顧需求',story:'家中長輩生活自理能力下降，需要安排照護支援。',cost:260000,health:-5,joy:-14,cover:['care'],knowledge:'care'}
+];
+const PLANS=[
+ {title:'基礎醫療與意外防護',keys:['medical','accident'],cost:24000,desc:'先建立住院自費與意外事故的基本防護。'},
+ {title:'住院與手術加強',keys:['daily'],cost:14000,desc:'補充住院日數與手術定額給付的觀念。'},
+ {title:'重大疾病與家庭責任',keys:['critical','life'],cost:28000,desc:'準備長期停工風險，兼顧家庭經濟責任。'},
+ {title:'長照與旅行保障',keys:['care','travel'],cost:26000,desc:'補足照護需求與旅行期間的特定風險。'}
+];
+const MBTI_ORDER=['INTJ','INTP','ENTJ','ENTP','INFJ','INFP','ENFJ','ENFP','ISTJ','ISFJ','ESTJ','ESFJ','ISTP','ISFP','ESTP','ESFP'];
+const ageStage=a=>a<35?'青年城市':a<65?'壯年家庭':'樂齡公園';
+const stageClass=a=>a<35?'':a<65?'era-family':'era-park';
+const percent=(n,max)=>Math.round(clamp(n/max*100));
+const rand=a=>a[Math.floor(Math.random()*a.length)];
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let state={screen:'create',age:18,mbti:'INTJ',name:'',money:100000,health:85,joy:65,cover:[],career:null,turn:0,salaryBonus:0,history:[],planStops:[],pending:null,previous:null,notification:'',income:0,roll:0,stageAge:18};
+let locked=false;
+function initialBonus(code){const m=MBTI_DATA[code];const t=m.perk;return {money:(t.match(/存款 \+(\d[\d,]*)/)||[])[1]?Number(t.match(/存款 \+([\d,]+)/)[1].replaceAll(',','')):0,health:(t.match(/健康 \+(\d+)/)||[])[1]*1||0,joy:(t.match(/幸福 \+(\d+)/)||[])[1]*1||0,salary:(t.match(/年薪加成 \+([\d,]+)/)||[])[1]?Number(t.match(/年薪加成 \+([\d,]+)/)[1].replaceAll(',','')):0};}
+function spend(amount){state.money=Math.max(0,state.money-Math.max(0,amount));}
+function addHistory(title,desc,important=false){state.history.push({age:state.age,title,desc,important});}
+function isAffordable(amount){return state.money>=amount;}
+function applyChoice(c){if(c.cost&&!isAffordable(c.cost))return false;spend(c.cost||0);state.money+=c.gain||0;state.health=clamp(state.health+(c.health||0));state.joy=clamp(state.joy+(c.joy||0));state.salaryBonus+=c.salaryBonus||0;return true;}
+function incomeForYears(from,to){let sum=0;const career=state.career;for(let age=from;age<to;age++){if(age<65){const exp=Math.max(0,age-22);const annualGross=(career.basePay+career.growth*exp)*12;const netSaving=Math.max(24000,Math.round(annualGross*.23)+state.salaryBonus);sum+=netSaving;}else{sum+=96000;}}return sum;}
+function updateCareer(){state.career=rand(CAREERS);}
+function stage(){return `<div class="stage ${stageClass(state.stageAge)}" aria-label="人生道路與行走角色"><div class="sun"></div><div class="hill"></div><div class="hill two"></div><div class="scenery"><div class="building" style="--h:95px"></div><div class="building" style="--h:70px"></div><div class="building" style="--h:120px"></div><div class="building" style="--h:82px"></div></div><div class="road"></div><div class="walker">${avatar(state.mbti)}</div><div class="landmark">${ageStage(state.stageAge)} / LIFE STAGE</div><div class="stage-sign">100 歲</div><div class="age-chip">${state.age} / 100 YEARS</div></div>`;}
+function stat(iconName,label,value,p){return `<div class="stat"><div class="stat-head">${icon(iconName)}<span>${label}</span></div><strong>${value}</strong><div class="progress"><span style="width:${clamp(p)}%"></span></div></div>`;}
+function hud(){return `<div class="stats">${stat('clock','人生進度',state.age+' 歲',percent(state.age-18,82))}${stat('wallet','存款資金',cash(state.money),Math.min(100,state.money/3000000*100))}${stat('heart','健康指數',state.health+' / 100',state.health)}${stat('spark','幸福指數',state.joy+' / 100',state.joy)}</div><div class="tags">${state.cover.length?state.cover.map(k=>`<span class="tag">${icon('shield',13)}${INSURANCE_TYPES[k].tag}</span>`).join(''):'<span class="tag empty">尚未配置保障</span>'}</div>`;}
+function knowledgeCard(key){const k=INSURANCE_TYPES[key];return `<div class="k-card"><div class="k-card-head"><b>${escapeHtml(k.name)}</b><span class="k-badge">保障知識</span></div><div class="k-grid"><div class="k-row"><b>這張保險在幹嘛</b><div>${escapeHtml(k.whatItDoes)}</div></div><div class="k-row"><b>推薦誰需要規劃</b><div>${escapeHtml(k.suitableFor)}</div></div><div class="k-row"><b>跟其他保險差在哪</b><div>${escapeHtml(k.diffNote)}</div></div></div></div>`;}
+function book(){return `<div class="knowledge-list">${Object.keys(INSURANCE_TYPES).map(k=>`<details><summary>${icon('book',16)}${INSURANCE_TYPES[k].name}${state.cover.includes(k)?' · 已配置':' · 未配置'}</summary>${knowledgeCard(k)}</details>`).join('')}</div>`;}
+function btn(label,action,primary=false,disabled=false,sub=''){return `<button class="button ${primary?'primary':''}" data-action="${action}" ${disabled?'disabled':''}>${label}${sub?`<small style="font-weight:400;opacity:.75">${sub}</small>`:''}</button>`;}
+function choiceButtons(choices,kind){return choices.map((c,i)=>{const disabled=!!(c.cost&&!isAffordable(c.cost));return `<button class="option" data-action="${kind}:${i}" ${disabled?'disabled':''}><b>${escapeHtml(c.text)}</b><small>${c.cost?`支出 ${cash(c.cost)}`:c.gain?`收入 ${cash(c.gain)}`:'不需額外支出'} · 健康 ${c.health>0?'+':''}${c.health||0} · 幸福 ${c.joy>0?'+':''}${c.joy||0}${disabled?' · 目前存款不足':''}</small></button>`;}).join('');}
+function creation(){const m=MBTI_DATA[state.mbti];return `<h1 class="lead">你的人生，從 18 歲開始。</h1><p class="sub">選擇 16 型人格與專屬行走角色。人格加成僅是遊戲設定，不代表真實能力差異。</p><div class="layout"><section>${stage()}<div class="panel" style="margin-top:14px"><h2>角色建立</h2><label for="player-name" class="muted">角色名稱</label><input class="input" id="player-name" maxlength="18" placeholder="輸入角色名稱" value="${escapeHtml(state.name)}"><h3>選擇 MBTI</h3><div class="mbti-grid">${MBTI_ORDER.map(k=>`<button class="mbti-btn ${k===state.mbti?'selected':''}" data-action="mbti:${k}" aria-pressed="${k===state.mbti}"><b>${k}</b><span>${MBTI_DATA[k].title}</span></button>`).join('')}</div><div class="mbti-preview">${avatar(state.mbti)}<div><b>${state.mbti} · ${m.title}</b><p class="muted">${m.desc}</p><span class="change">開局加成：${m.perk}</span></div></div>${btn(icon('arrow')+' 開始人生實驗','start',true)}</div></section><aside class="panel"><div class="step">EXPERIMENT BRIEF</div><h2>百歲人生模擬實驗室</h2><p class="sub">擲骰一次前進 6～11 歲；每回合結算工作儲蓄、退休收入與生活事件。兩次保障規劃站，讓你體驗準備與風險之間的差異。</p><div class="note">事件以生活日常為主，少部分是重大風險。所有數值、薪資與保障效果均為提案教學模擬。</div></aside></div>`;}
+function start(){const input=$('player-name');state.name=(input?.value||'').trim()||'人生旅人';const b=initialBonus(state.mbti);state.money=100000+b.money;state.health=clamp(85+b.health);state.joy=clamp(65+b.joy);state.salaryBonus=b.salary;state.cover=[];state.age=18;state.stageAge=18;state.turn=0;state.history=[];state.planStops=[];state.income=0;updateCareer();state.screen='board';state.notification=`你的初始職業：${state.career.title}，月薪 ${cash(state.career.basePay)}；每年調薪 ${cash(state.career.growth)}（皆為模擬值）。`;render();}
+function board(){return `<h1 class="lead">${escapeHtml(state.name)} 的人生道路</h1><div class="stage-top"><span class="muted">${state.mbti} · ${MBTI_DATA[state.mbti].title}</span><span class="career-badge">${state.age<65?state.career.title:'退休生活'}</span></div><div class="layout"><section>${stage()}${hud()}<div class="panel"><div class="step">LIFE ADVANCE · ROUND ${state.turn+1}</div><h2>下一段人生，會發生什麼？</h2><p class="sub">擲出 1～6 點，向前走點數 + 5 歲。每次都會先累積工作淨儲蓄或退休金，再遇見生活選擇。</p>${btn(icon('dice')+' 推進人生（擲骰子）','roll',true)}${state.notification?`<div class="note">${escapeHtml(state.notification)}</div>`:''}</div></section><aside class="panel"><div class="step">CAREER & FINANCE</div><h2>工作與收入</h2><p class="sub">${state.career.title}｜起薪 ${cash(state.career.basePay)}／月｜每年調薪 ${cash(state.career.growth)}／月</p><div class="note">最近一回合累積淨儲蓄或退休金：${cash(state.income)}。淨儲蓄採模擬薪資的一定比例，已假設扣除日常生活支出；65 歲後改計模擬退休金。</div><h3>人生轉折紀錄</h3><div class="history">${state.history.slice(-4).reverse().map(h=>`<article><b>${h.age} 歲｜${escapeHtml(h.title)}</b><p>${escapeHtml(h.desc)}</p></article>`).join('')||'<p class="muted">尚無紀錄</p>'}</div></aside></div>`;}
+function roll(){if(locked||state.screen!=='board')return;locked=true;state.roll=1+Math.floor(Math.random()*6);const from=state.age;const to=Math.min(100,from+state.roll+5);state.income=incomeForYears(from,to);state.money+=state.income;state.age=to;state.turn++;state.notification=`骰出 ${state.roll} 點，前進 ${to-from} 歲；本段淨儲蓄／退休金增加 ${cash(state.income)}。`;state.screen='rolling';render();setTimeout(()=>{state.stageAge=to;locked=false;if(to>=100){finish();return;}if((from<25&&to>=25&&!state.planStops.includes('early'))||(state.turn===1&&!state.planStops.includes('early'))){state.planStops.push('early');state.screen='plan';state.pending={plan:'early'};}else if(from<45&&to>=35&&!state.planStops.includes('middle')){state.planStops.push('middle');state.screen='plan';state.pending={plan:'middle'};}else{drawEvent();}render();},620);}
+function drawEvent(){const risk=Math.random()<.20;const pool=(risk?RISK_EVENTS:DAILY_EVENTS).filter(e=>e.min<=state.age&&e.max>=state.age);const fallback=(risk?RISK_EVENTS:DAILY_EVENTS);const e=rand(pool.length?pool:fallback);state.pending={...e,risk};state.screen='event';}
+function plan(){const early=state.pending.plan==='early';return `<div class="layout"><section>${stage()}${hud()}<div class="panel"><div class="step">PROTECTION PLANNING</div><h2>${early?'第一站｜剛開始工作的保障規劃':'第二站｜家庭責任與進階保障'}</h2><p class="sub">你可以從有限預算中選擇一組保障。已配置的類別不會重複收費；這是一次性的遊戲預算，不代表實際保費。</p><div class="options">${PLANS.map((p,i)=>{const fresh=p.keys.filter(k=>!state.cover.includes(k));const price=Math.round(p.cost*fresh.length/p.keys.length);const dis=!fresh.length||!isAffordable(price);return `<button class="option" data-action="plan:${i}" ${dis?'disabled':''}><b>${p.title}</b><small>${p.desc}<br>本次模擬支出 ${cash(price)}${!fresh.length?' · 已全數配置':!isAffordable(price)?' · 目前存款不足':''}</small></button>`;}).join('')}</div>${btn('先保留現金，暫不投保','skipPlan')}</div></section><aside class="panel"><h2>七大保障，先認識再決定</h2><p class="muted">展開可看三個白話欄位。</p>${book()}</aside></div>`;}
+function buyPlan(i){const p=PLANS[i];if(!p)return;const fresh=p.keys.filter(k=>!state.cover.includes(k));const price=Math.round(p.cost*fresh.length/p.keys.length);if(!fresh.length||!isAffordable(price))return;spend(price);state.cover.push(...fresh);state.pending={kind:'purchase',keys:fresh,amount:price};state.screen='knowledge';addHistory('完成保障規劃',`配置 ${fresh.map(k=>INSURANCE_TYPES[k].tag).join('、')}，模擬支出 ${cash(price)}`,true);render();}
+function skipPlan(){addHistory('暫緩保障規劃','選擇先保留資金，未新增保障。',true);drawEvent();render();}
+function eventPage(){const e=state.pending;return `<div class="layout"><section>${stage()}${hud()}<div class="panel"><div class="step">${e.risk?'RISK EVENT':'DAILY LIFE'} · ${state.age} 歲</div><h2>${escapeHtml(e.title)}</h2><p class="sub">${escapeHtml(e.story)}</p>${e.risk?`<div class="note warn">這是隨機風險事件，模擬支出 ${cash(e.cost)}。系統將依先前配置的保障類別試算，實際保險是否給付須依契約條款。</div>${btn('查看風險結算','resolveRisk',true)}`:`<h3>你會怎麼選？</h3><div class="options">${choiceButtons(e.choices,'daily')}</div>`}</div></section><aside class="panel"><h2>這段人生的收入</h2><p class="sub">本回合從 ${Math.max(18,state.age-(state.roll+5))} 歲左右前進至 ${state.age} 歲，已先累積 ${cash(state.income)} 的淨儲蓄／退休金。</p><div class="note">選擇日常事件會影響存款、健康與幸福。你可以用不同角色重新體驗另一段人生。</div></aside></div>`;}
+function dailyChoice(i){const e=state.pending,c=e.choices[i];if(!c||!applyChoice(c))return;addHistory(e.title,`${c.text}。${c.tip}`,false);state.pending={kind:'daily',title:e.title,choice:c.text,tip:c.tip,knowledge:c.knowledge};state.screen='result';if(state.health<=0){finish();return;}render();}
+function resolveRisk(){const e=state.pending;if(!e?.risk)return;const matching=e.cover.filter(k=>state.cover.includes(k));const insured=matching.length>0;const reduction=insured?Math.round(e.cost*.8):0;const outOfPocket=e.cost-reduction;const before=state.money;spend(outOfPocket);state.health=clamp(state.health+e.health);state.joy=clamp(state.joy+e.joy+(insured?7:0));const exhausted=state.money===0&&outOfPocket>before;const detail=insured?`已配置 ${matching.map(k=>INSURANCE_TYPES[k].tag).join('、')}，遊戲模擬分攤 ${cash(reduction)}（80%）。`:'沒有符合本次事件的模擬保障，需自行負擔全部費用。';addHistory(e.title,`${detail}自付 ${cash(Math.min(before,outOfPocket))}。`,true);state.pending={kind:'risk',title:e.title,detail,knowledge:e.knowledge,insured,exhausted,outOfPocket,reduction};state.screen='knowledge';render();}
+function resultPage(){const p=state.pending;return `<div class="layout"><section>${stage()}${hud()}<div class="panel"><div class="step">DECISION RESULT</div><h2>${escapeHtml(p.title)}</h2><p class="sub">你的選擇：${escapeHtml(p.choice)}</p><div class="note">${escapeHtml(p.tip)}</div>${btn(icon('arrow')+' 繼續人生旅程','continue',true)}</div></section><aside class="panel"><h2>日常選擇，也會改變人生</h2><p class="sub">幸福與健康不是保險的替代品；保險則是協助管理特定財務風險的工具。</p>${p.knowledge?knowledgeCard(p.knowledge):''}</aside></div>`;}
+function knowledgePage(){const p=state.pending;const keys=p.kind==='purchase'?p.keys:[p.knowledge];return `<div class="layout"><section>${stage()}${hud()}<div class="panel"><div class="step">NS100 / INSURANCE KNOWLEDGE</div><h2>${p.kind==='purchase'?'保障規劃完成':p.insured?'模擬保障啟動':'發現保障缺口'}</h2><p class="sub">${p.kind==='purchase'?`本次配置 ${keys.map(k=>INSURANCE_TYPES[k].tag).join('、')}，模擬支出 ${cash(p.amount)}。`:escapeHtml(p.detail)}</p>${p.exhausted?'<div class="note warn">存款歸零、靠社會安全網與親友支援度過難關。這是教學情境，實際可用資源與資格依制度而定。</div>':''}${p.kind==='risk'?`<div class="note">本次模擬自付 ${cash(p.outOfPocket)}，模擬保障分攤 ${cash(p.reduction)}。80% 是教學假設，不是保險理賠承諾。</div>`:''}${btn(icon('arrow')+' 繼續人生旅程','continue',true)}</div></section><aside class="panel"><h2>白話保障知識卡</h2>${keys.map(knowledgeCard).join('')}</aside></div>`;}
+function continueGame(){if(state.health===0||state.age>=100){finish();return;}state.pending=null;state.screen='board';render();}
+function finish(){state.screen='report';state.pending=null;render();}
+function report(){const moments=state.history.filter(h=>h.important).slice(-3);const missing=Object.keys(INSURANCE_TYPES).filter(k=>!state.cover.includes(k));const healthLabel=state.health>=75?'健康維持良好':state.health>=45?'健康需要持續照顧':'健康需要優先關注';const joyLabel=state.joy>=75?'幸福感充足':state.joy>=45?'幸福感穩定':'需要更多支持與休息';return `<h1 class="lead">百歲人生實驗報告</h1><div class="layout"><section><div class="panel report"><div class="step">NS100 / PERSONAL LIFE REPORT</div><div class="report-hero">${avatar(state.mbti)}<div><h2>${escapeHtml(state.name)}</h2><div class="muted">${state.mbti} · ${MBTI_DATA[state.mbti].title} · ${state.career.title}</div><p class="sub">${state.age>=100?'你完成了百歲旅程。':'本次模擬因健康歸零提前結束。'}</p></div></div><div class="result-numbers"><div><strong>${state.age} 歲</strong><small>最終年齡</small></div><div><strong>${state.health}</strong><small>健康指數</small></div><div><strong>${state.joy}</strong><small>幸福指數</small></div></div><div class="note">${healthLabel}；${joyLabel}。最終存款 ${cash(state.money)}。</div><h3>三個關鍵轉折點</h3><div class="history">${(moments.length?moments:state.history.slice(-3)).map(h=>`<article><b>${h.age} 歲｜${escapeHtml(h.title)}</b><p>${escapeHtml(h.desc)}</p></article>`).join('')||'<p>這次旅程沒有留下事件紀錄。</p>'}</div><h3>保障缺口健檢</h3><p class="sub">已配置 ${state.cover.length} / 7 類。${missing.length?`尚未配置：${missing.map(k=>INSURANCE_TYPES[k].tag).join('、')}。請依家庭責任、工作型態、旅行習慣與負擔能力排序，不代表每類都必須購買。`:'七類教學保障均已配置，仍須留意實際契約條款、保額及除外責任。'}</p>${btn(icon('refresh')+' 重新模擬人生','restart',true)}</div></section><aside class="panel"><h2>七大保險分類總覽與推薦圖鑑</h2><p class="muted">可逐項展開；標記本次旅程的保障配置狀態。</p>${book()}</aside></div>`;}
+function render(){const app=$('app');if(!app)return;const screen=state.screen;app.innerHTML=screen==='create'?creation():screen==='board'||screen==='rolling'?board():screen==='plan'?plan():screen==='event'?eventPage():screen==='result'?resultPage():screen==='knowledge'?knowledgePage():report();if(screen==='rolling'){const b=app.querySelector('[data-action="roll"]');if(b){b.disabled=true;b.innerHTML=`<span class="rolling">${icon('dice')}</span> 正在推進 ${state.roll+5} 歲…`;}}}
+$('app').addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(!b||b.disabled||locked)return;const [action,arg]=b.dataset.action.split(':');if(action==='mbti'){const n=$('player-name');if(n)state.name=n.value;state.mbti=arg;render();}else if(action==='start')start();else if(action==='roll')roll();else if(action==='plan')buyPlan(Number(arg));else if(action==='skipPlan')skipPlan();else if(action==='daily')dailyChoice(Number(arg));else if(action==='resolveRisk')resolveRisk();else if(action==='continue')continueGame();else if(action==='restart'){state={screen:'create',age:18,mbti:'INTJ',name:'',money:100000,health:85,joy:65,cover:[],career:null,turn:0,salaryBonus:0,history:[],planStops:[],pending:null,previous:null,notification:'',income:0,roll:0,stageAge:18};render();}});
+render();
 </script></body></html>
